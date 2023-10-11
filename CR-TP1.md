@@ -49,7 +49,9 @@
     gateway : 10.33.51.254
 
 🌞 Déterminer la MAC de la passerelle
+    
     commande: arp -a
+    
     Interface : 10.33.48.17 --- 0x3
   Adresse Internet      Adresse physique      Type
   10.33.48.14           e4-b3-18-48-36-68     dynamique
