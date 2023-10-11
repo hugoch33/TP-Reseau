@@ -11,9 +11,9 @@ nom, adresse MAC et adresse IP de l'interface WiFi :
 
     Suffixe DNS propre à la connexion. . . :
     
-    Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
+    Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW) == nom
     
-    Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5
+    Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5 == adresse MAC
     
     DHCP activé. . . . . . . . . . . . . . : Oui
     
@@ -21,7 +21,7 @@ nom, adresse MAC et adresse IP de l'interface WiFi :
     
     Adresse IPv6 de liaison locale. . . . .: fe80::9a24:18b8:e579:d17f%3(préféré)
     
-    Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré)
+    Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré) == adresse ip
     
     Masque de sous-réseau. . . . . . . . . : 255.255.252.0
     
@@ -54,9 +54,9 @@ nom, adresse MAC et adresse IP de l'interface Ethernet :
     
     Suffixe DNS propre à la connexion. . . :
     
-    Description. . . . . . . . . . . . . . : Killer E2600 Gigabit Ethernet Controller
+    Description. . . . . . . . . . . . . . : Killer E2600 Gigabit Ethernet Controller == nom
     
-    Adresse physique . . . . . . . . . . . : 08-8F-C3-4A-E9-64
+    Adresse physique . . . . . . . . . . . : 08-8F-C3-4A-E9-64 == adresse MAC
     
     DHCP activé. . . . . . . . . . . . . . : Oui
     
