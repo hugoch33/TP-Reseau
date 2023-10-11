@@ -3,7 +3,7 @@
 ### 1. Affichage d'informations sur la pile TCP/IP locale
 🌞 Affichez les infos des cartes réseau de votre PC
 
-- nom, adresse MAC et adresse IP de l'interface WiFi : 
+nom, adresse MAC et adresse IP de l'interface WiFi : 
 
     commmande: ip config /all
     
@@ -44,7 +44,7 @@
     NetBIOS sur Tcpip. . . . . . . . . . . : Activé
 
 
-- nom, adresse MAC et adresse IP de l'interface Ethernet :
+nom, adresse MAC et adresse IP de l'interface Ethernet :
 
     commande: ipconfig /all
 
