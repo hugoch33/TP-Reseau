@@ -10,22 +10,37 @@
     Carte réseau sans fil Wi-Fi :
 
     Suffixe DNS propre à la connexion. . . :
+    
     Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
+    
     Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5
+    
     DHCP activé. . . . . . . . . . . . . . : Oui
+    
     Configuration automatique activée. . . : Oui
+    
     Adresse IPv6 de liaison locale. . . . .: fe80::9a24:18b8:e579:d17f%3(préféré)
+    
     Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré)
+    
     Masque de sous-réseau. . . . . . . . . : 255.255.252.0
+    
     Bail obtenu. . . . . . . . . . . . . . : mercredi 11 octobre 2023 09:01:17
+    
     Bail expirant. . . . . . . . . . . . . : jeudi 12 octobre 2023 09:01:17
+    
     Passerelle par défaut. . . . . . . . . : 10.33.51.254
+    
     Serveur DHCP . . . . . . . . . . . . . : 10.33.51.254
+    
     IAID DHCPv6 . . . . . . . . . . . : 59954491
+    
     DUID de client DHCPv6. . . . . . . . : 00-03-00-01-92-D5-3B-F5-79-F5
+    
     Serveurs DNS. . .  . . . . . . . . . . : 208.67.222.220
                                        208.67.220.222
                                        10.188.0.1
+    
     NetBIOS sur Tcpip. . . . . . . . . . . : Activé
 
 
@@ -36,10 +51,15 @@
     Carte Ethernet Ethernet :
 
     Statut du média. . . . . . . . . . . . : Média déconnecté
+    
     Suffixe DNS propre à la connexion. . . :
+    
     Description. . . . . . . . . . . . . . : Killer E2600 Gigabit Ethernet Controller
+    
     Adresse physique . . . . . . . . . . . : 08-8F-C3-4A-E9-64
+    
     DHCP activé. . . . . . . . . . . . . . : Oui
+    
     Configuration automatique activée. . . : Oui
 
 🌞 Affichez votre gateway
