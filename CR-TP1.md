@@ -193,22 +193,22 @@ Itinéraire déterminé.
 
 Carte réseau sans fil Wi-Fi :
 
-   Suffixe DNS propre à la connexion. . . :
-   Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
-   Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5
-   DHCP activé. . . . . . . . . . . . . . : Oui
-   Configuration automatique activée. . . : Oui
-   Adresse IPv6 de liaison locale. . . . .: fe80::9a24:18b8:e579:d17f%3(préféré)
-   Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré)
-   Masque de sous-réseau. . . . . . . . . : 255.255.252.0
-   Bail obtenu. . . . . . . . . . . . . . : lundi 16 octobre 2023 11:48:18
-   Bail expirant. . . . . . . . . . . . . : mardi 17 octobre 2023 09:01:46
-   Passerelle par défaut. . . . . . . . . : 10.33.51.254
-   Serveur DHCP . . . . . . . . . . . . . : 10.33.51.254
-   IAID DHCPv6 . . . . . . . . . . . : 59954491
-   DUID de client DHCPv6. . . . . . . . : 00-03-00-01-92-D5-3B-F5-79-F5
-   Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2
+    Suffixe DNS propre à la connexion. . . :
+    Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
+    Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5
+    DHCP activé. . . . . . . . . . . . . . : Oui
+    Configuration automatique activée. . . : Oui
+    Adresse IPv6 de liaison locale. . . . .: fe80::9a24:18b8:e579:d17f%3(préféré)
+    Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré)
+    Masque de sous-réseau. . . . . . . . . : 255.255.252.0
+    Bail obtenu. . . . . . . . . . . . . . : lundi 16 octobre 2023 11:48:18
+    Bail expirant. . . . . . . . . . . . . : mardi 17 octobre 2023 09:01:46
+    Passerelle par défaut. . . . . . . . . : 10.33.51.254
+    Serveur DHCP . . . . . . . . . . . . . : 10.33.51.254
+    IAID DHCPv6 . . . . . . . . . . . : 59954491
+    DUID de client DHCPv6. . . . . . . . : 00-03-00-01-92-D5-3B-F5-79-F5
+    Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2
                                        8.8.8.8
-   NetBIOS sur Tcpip. . . . . . . . . . . : Activé
+    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
 
  ## 2. DNS
