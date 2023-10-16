@@ -180,16 +180,44 @@ ping 1.1.1.1
 
 tracert 10.10.10.251
 
-Détermination de l’itinéraire vers MSI [10.10.10.251]
-avec un maximum de 30 sauts :
+    Détermination de l’itinéraire vers MSI [10.10.10.251]
+    avec un maximum de 30 sauts :
 
-  1     1 ms     1 ms    <1 ms  MSI [10.10.10.251]
-Itinéraire déterminé.
+        1     1 ms     1 ms    <1 ms  MSI [10.10.10.251]
+    Itinéraire déterminé.
 
 ## III. Manipulations d'autres outils/protocoles côté client
 
 ## 1. DHCP
 🌞Exploration du DHCP, depuis votre PC
+
+commande: ipconfig /all
+
+Carte réseau sans fil Wi-Fi :
+
+    Suffixe DNS propre à la connexion. . . :
+    Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
+    Adresse physique . . . . . . . . . . . : 92-D5-3B-F5-79-F5
+    DHCP activé. . . . . . . . . . . . . . : Oui
+    Configuration automatique activée. . . : Oui
+    Adresse IPv6 de liaison locale. . . . .: fe80::9a24:18b8:e579:d17f%3(préféré)
+    Adresse IPv4. . . . . . . . . . . . . .: 10.33.48.17(préféré)
+    Masque de sous-réseau. . . . . . . . . : 255.255.252.0
+    Bail obtenu. . . . . . . . . . . . . . : lundi 16 octobre 2023 11:48:18
+    Bail expirant. . . . . . . . . . . . . : mardi 17 octobre 2023 09:01:46
+    Passerelle par défaut. . . . . . . . . : 10.33.51.254
+    Serveur DHCP . . . . . . . . . . . . . : 10.33.51.254 == adresse ip du serveur DHCP
+    IAID DHCPv6 . . . . . . . . . . . : 59954491
+    DUID de client DHCPv6. . . . . . . . : 00-03-00-01-92-D5-3B-F5-79-F5
+    Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2
+                                       8.8.8.8
+    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
+
+ ## 2. DNS
+
+🌞** Trouver l'adresse IP du serveur DNS que connaît votre ordinateur**
+
+commande: ip config /all
 
 Carte réseau sans fil Wi-Fi :
 
@@ -207,8 +235,58 @@ Carte réseau sans fil Wi-Fi :
     Serveur DHCP . . . . . . . . . . . . . : 10.33.51.254
     IAID DHCPv6 . . . . . . . . . . . : 59954491
     DUID de client DHCPv6. . . . . . . . : 00-03-00-01-92-D5-3B-F5-79-F5
-    Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2
+    Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2 == adresse ip du serveur DNS
                                        8.8.8.8
     NetBIOS sur Tcpip. . . . . . . . . . . : Activé
 
- ## 2. DNS
+🌞 Utiliser, en ligne de commande l'outil nslookup (Windows, MacOS) ou dig (GNU/Linux, MacOS) pour faire des requêtes DNS à la main
+
+nslookup google.com 8.8.8.8
+    Serveur :   dns.google
+    Address:  8.8.8.8
+
+    Réponse ne faisant pas autorité :
+    Nom :    google.com
+    Addresses:  2a00:1450:4007:818::200e
+            142.250.179.110
+
+nslookup ynov.com 8.8.8.8
+    Serveur :   dns.google
+    Address:  8.8.8.8
+
+    Réponse ne faisant pas autorité :
+    Nom :    ynov.com
+    Addresses:  2606:4700:20::681a:be9
+            2606:4700:20::681a:ae9
+            2606:4700:20::ac43:4ae2
+            104.26.11.233
+            172.67.74.226
+            104.26.10.233
+
+
+
+nslookup 231.34.113.12 8.8.8.8
+    Serveur :   dns.google
+    Address:  8.8.8.8
+
+    *** dns.google ne parvient pas à trouver 231.34.113.12 : Non-existent domain
+
+nslookup 78.34.2.17 8.8.8.8
+    Serveur :   dns.google
+    Address:  8.8.8.8
+
+    Nom :    cable-78-34-2-17.nc.de
+    Address:  78.34.2.17
+
+En ce qui concer l'adresse IP : 231.34.113.12, elle n'existe juste pas d'où l'erreur "Non-existent domain"
+Et pour l'addresse IP: 78.34.2.17, notre machine a ping "cable-78-34-2-17.nc.de" donc l'addresse existe
+
+## IV. Wireshark
+
+🌞 Utilisez le pour observer les trames qui circulent entre vos deux carte Ethernet. Mettez en évidence :
+    un ping entre vous et votre mate
+    un ping entre vous et la passerelle du réseau
+    un netcat entre vous et votre mate, branché en RJ45
+    une requête DNS. Identifiez dans la capture le serveur DNS à qui vous posez la question.
+    je veux des fichiers .pcap dans votre dépôt git
+    on va prendre l'habitude d'utiliser Wireshark souvent dans les cours, pour visualiser ce qu'il se passe
