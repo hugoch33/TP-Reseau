@@ -75,7 +75,7 @@ nom, adresse MAC et adresse IP de l'interface Ethernet :
     Interface : 10.33.48.17 --- 0x3
     Adresse Internet      Adresse physique      Type
     10.33.48.14           e4-b3-18-48-36-68     dynamique
-    10.33.51.254          7c-5a-1c-cb-fd-a4     dynamique
+    10.33.51.254          7c-5a-1c-cb-fd-a4     dynamique == MAC de la passerelle
     10.33.51.255          ff-ff-ff-ff-ff-ff     statique
     224.0.0.22            01-00-5e-00-00-16     statique
     224.0.0.251           01-00-5e-00-00-fb     statique
