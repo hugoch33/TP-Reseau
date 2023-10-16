@@ -242,6 +242,7 @@ Carte réseau sans fil Wi-Fi :
 🌞 Utiliser, en ligne de commande l'outil nslookup (Windows, MacOS) ou dig (GNU/Linux, MacOS) pour faire des requêtes DNS à la main
 
 nslookup google.com 8.8.8.8
+   
     Serveur :   dns.google
     Address:  8.8.8.8
 
@@ -251,6 +252,7 @@ nslookup google.com 8.8.8.8
             142.250.179.110
 
 nslookup ynov.com 8.8.8.8
+    
     Serveur :   dns.google
     Address:  8.8.8.8
 
@@ -266,12 +268,14 @@ nslookup ynov.com 8.8.8.8
 
 
 nslookup 231.34.113.12 8.8.8.8
+   
     Serveur :   dns.google
     Address:  8.8.8.8
 
     *** dns.google ne parvient pas à trouver 231.34.113.12 : Non-existent domain
 
 nslookup 78.34.2.17 8.8.8.8
+    
     Serveur :   dns.google
     Address:  8.8.8.8
 
