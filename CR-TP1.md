@@ -191,6 +191,7 @@ Itinéraire déterminé.
 
 ## 1. DHCP
 🌞Exploration du DHCP, depuis votre PC
+
 Carte réseau sans fil Wi-Fi :
 
    Suffixe DNS propre à la connexion. . . :
@@ -210,4 +211,5 @@ Carte réseau sans fil Wi-Fi :
    Serveurs DNS. . .  . . . . . . . . . . : 10.33.10.2
                                        8.8.8.8
    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
+
  ## 2. DNS
