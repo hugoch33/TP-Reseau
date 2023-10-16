@@ -165,15 +165,15 @@ arp -a
 
 ping 1.1.1.1
 
-Envoi d’une requête 'Ping'  1.1.1.1 avec 32 octets de données :
-Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
-Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
-Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
-Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
+    Envoi d’une requête 'Ping'  1.1.1.1 avec 32 octets de données :
+    Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
+    Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
+    Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
+    Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
 
-Statistiques Ping pour 1.1.1.1:
+    Statistiques Ping pour 1.1.1.1:
     Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
-Durée approximative des boucles en millisecondes :
+        Durée approximative des boucles en millisecondes :
     Minimum = 11ms, Maximum = 11ms, Moyenne = 11ms
 
 🌞 Prouver que la connexion Internet passe bien par l'autre PC
@@ -184,7 +184,6 @@ Détermination de l’itinéraire vers MSI [10.10.10.251]
 avec un maximum de 30 sauts :
 
   1     1 ms     1 ms    <1 ms  MSI [10.10.10.251]
-
 Itinéraire déterminé.
 
 ## III. Manipulations d'autres outils/protocoles côté client
