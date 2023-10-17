@@ -217,9 +217,9 @@ Carte réseau sans fil Wi-Fi :
 
 🌞** Trouver l'adresse IP du serveur DNS que connaît votre ordinateur**
 
-commande: ip config /all
+    commande: ip config /all
 
-Carte réseau sans fil Wi-Fi :
+    Carte réseau sans fil Wi-Fi :
 
     Suffixe DNS propre à la connexion. . . :
     Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
@@ -241,7 +241,7 @@ Carte réseau sans fil Wi-Fi :
 
 🌞 Utiliser, en ligne de commande l'outil nslookup (Windows, MacOS) ou dig (GNU/Linux, MacOS) pour faire des requêtes DNS à la main
 
-nslookup google.com 8.8.8.8
+    nslookup google.com 8.8.8.8
    
     Serveur :   dns.google
     Address:  8.8.8.8
@@ -251,7 +251,8 @@ nslookup google.com 8.8.8.8
     Addresses:  2a00:1450:4007:818::200e
             142.250.179.110
 
-nslookup ynov.com 8.8.8.8
+    
+    nslookup ynov.com 8.8.8.8
     
     Serveur :   dns.google
     Address:  8.8.8.8
@@ -294,3 +295,9 @@ Et pour l'addresse IP: 78.34.2.17, notre machine a ping "cable-78-34-2-17.nc.de"
     une requête DNS. Identifiez dans la capture le serveur DNS à qui vous posez la question.
     je veux des fichiers .pcap dans votre dépôt git
     on va prendre l'habitude d'utiliser Wireshark souvent dans les cours, pour visualiser ce qu'il se passe
+
+8	3.238921	10.10.10.251	239.255.255.250	SSDP	217	M-SEARCH * HTTP/1.1 :
+
+    Frame 8: 217 bytes on wire (1736 bits), 217 bytes captured (1736 bits) on interface \Device\NPF_{1FD2986B-256A-434F-B060-CB037B30E030}, id 0
+
+195.891477	10.33.48.17	10.33.51.254	ICMP	74	Echo (ping) request  id=0x0001, seq=46/11776, ttl=128 (no response found!)
