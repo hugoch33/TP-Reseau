@@ -111,7 +111,7 @@ L'IP de l'autre machine : 10.10.10.251/24
 
 🌞 Vérifier à l'aide d'une commande que votre IP a bien été changée
 
-ìpconfig
+    ìpconfig
 
     Carte Ethernet Ethernet :
 
@@ -123,7 +123,7 @@ L'IP de l'autre machine : 10.10.10.251/24
 
 🌞 Vérifier que les deux machines se joignent
 
-ping 10.10.10.250
+    ping 10.10.10.250
 
 
     Réponse de 10.10.10.250 : octets=32 temps<1ms TTL=128
@@ -138,7 +138,7 @@ ping 10.10.10.250
 
 🌞 Déterminer l'adresse MAC de votre correspondant
 
-arp -a
+    arp -a
 
     Interface : 10.10.10.250 --- 0x5
     Adresse Internet      Adresse physique      Type
@@ -163,7 +163,7 @@ arp -a
 
 🌞Tester l'accès internet
 
-ping 1.1.1.1
+    ping 1.1.1.1
 
     Envoi d’une requête 'Ping'  1.1.1.1 avec 32 octets de données :
     Réponse de 1.1.1.1 : octets=32 temps=11 ms TTL=57
@@ -178,7 +178,7 @@ ping 1.1.1.1
 
 🌞 Prouver que la connexion Internet passe bien par l'autre PC
 
-tracert 10.10.10.251
+    tracert 10.10.10.251
 
     Détermination de l’itinéraire vers MSI [10.10.10.251]
     avec un maximum de 30 sauts :
@@ -191,9 +191,9 @@ tracert 10.10.10.251
 ## 1. DHCP
 🌞Exploration du DHCP, depuis votre PC
 
-commande: ipconfig /all
+    commande: ipconfig /all
 
-Carte réseau sans fil Wi-Fi :
+    Carte réseau sans fil Wi-Fi :
 
     Suffixe DNS propre à la connexion. . . :
     Description. . . . . . . . . . . . . . : Killer(R) Wi-Fi 6 AX1650i 160MHz Wireless Network Adapter (201NGW)
@@ -241,7 +241,7 @@ Carte réseau sans fil Wi-Fi :
 
 🌞 Utiliser, en ligne de commande l'outil nslookup (Windows, MacOS) ou dig (GNU/Linux, MacOS) pour faire des requêtes DNS à la main
 
-    nslookup google.com 8.8.8.8
+nslookup google.com 8.8.8.8
    
     Serveur :   dns.google
     Address:  8.8.8.8
@@ -252,7 +252,7 @@ Carte réseau sans fil Wi-Fi :
             142.250.179.110
 
     
-    nslookup ynov.com 8.8.8.8
+nslookup ynov.com 8.8.8.8
     
     Serveur :   dns.google
     Address:  8.8.8.8
@@ -283,7 +283,7 @@ nslookup 78.34.2.17 8.8.8.8
     Nom :    cable-78-34-2-17.nc.de
     Address:  78.34.2.17
 
-En ce qui concer l'adresse IP : 231.34.113.12, elle n'existe juste pas d'où l'erreur "Non-existent domain"
+En ce qui concerne l'adresse IP : 231.34.113.12, elle n'existe juste pas d'où l'erreur "Non-existent domain"
 Et pour l'addresse IP: 78.34.2.17, notre machine a ping "cable-78-34-2-17.nc.de" donc l'addresse existe
 
 ## IV. Wireshark
