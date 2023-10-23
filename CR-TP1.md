@@ -2,7 +2,7 @@
 
 # I. Exploration locale en solo
 
-### 1. Affichage d'informations sur la pile TCP/IP locale
+## 1. Affichage d'informations sur la pile TCP/IP locale
 🌞 Affichez les infos des cartes réseau de votre PC
 
 nom, adresse MAC et adresse IP de l'interface WiFi : 
@@ -91,7 +91,7 @@ nom, adresse MAC et adresse IP de l'interface Ethernet :
 
 ```parametre > réseau et internet > propriétés du matériel```
 
-### 2.  Modifications des informations
+## 2.  Modifications des informations
 
 🌞 Utilisez l'interface graphique de votre OS pour changer d'adresse IP :
 
@@ -186,7 +186,7 @@ L'IP de l'autre machine : 10.10.10.251/24
         1     1 ms     1 ms    <1 ms  MSI [10.10.10.251]
     Itinéraire déterminé.
 
-## III. Manipulations d'autres outils/protocoles côté client
+# III. Manipulations d'autres outils/protocoles côté client
 
 ## 1. DHCP
 🌞Exploration du DHCP, depuis votre PC
@@ -296,8 +296,3 @@ Et pour l'addresse IP: 78.34.2.17, notre machine a ping "cable-78-34-2-17.nc.de"
     je veux des fichiers .pcap dans votre dépôt git
     on va prendre l'habitude d'utiliser Wireshark souvent dans les cours, pour visualiser ce qu'il se passe
 
-8	3.238921	10.10.10.251	239.255.255.250	SSDP	217	M-SEARCH * HTTP/1.1 :
-
-    Frame 8: 217 bytes on wire (1736 bits), 217 bytes captured (1736 bits) on interface \Device\NPF_{1FD2986B-256A-434F-B060-CB037B30E030}, id 0
-
-195.891477	10.33.48.17	10.33.51.254	ICMP	74	Echo (ping) request  id=0x0001, seq=46/11776, ttl=128 (no response found!)
