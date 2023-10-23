@@ -21,11 +21,6 @@ adresse de broadcast :  10.33.172.27
         Réponse de 10.33.172.254 : octets=32 temps<1ms TTL=128
         Réponse de 10.33.172.254 : octets=32 temps<1ms TTL=128
 
-        Statistiques Ping pour 10.33.172.253:
-            Paquets : envoyés = 4, reçus = 4, perdus = 0 (perte 0%),
-        Durée approximative des boucles en millisecondes :
-            Minimum = 6ms, Maximum = 7ms, Moyenne = 6ms
-
 # II. ARP my bro
 
 #### 🌞 Manipuler la table ARP
@@ -86,4 +81,6 @@ adresse de broadcast :  10.33.172.27
 
 #### 🌞 Wireshark it (TP2ART)
 
-## 3 DHCP
+## III.DHCP
+
+ #### 🌞 Wireshark it (DHC)
