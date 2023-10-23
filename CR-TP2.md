@@ -31,15 +31,15 @@ adresse de broadcast :  10.33.172.27
 🌞 Check the ARP table
 
 
-  PS C:\Users\chama> arp -a
+    PS C:\Users\chama> arp -a
 
-  Interface : 10.33.172.24 --- 0x5
-  Adresse Internet      Adresse physique      Type
-  10.33.172.25          04-7c-16-ac-f9-ca     dynamique == MAC de mon binôme
-  10.33.172.27          ff-ff-ff-ff-ff-ff     statique
-  224.0.0.22            01-00-5e-00-00-16     statique
-  224.0.0.251           01-00-5e-00-00-fb     statique
-  224.0.0.252           01-00-5e-00-00-fc     statique
-  239.255.255.250       01-00-5e-7f-ff-fa     statique
+    Interface : 10.33.172.24 --- 0x5
+    Adresse Internet      Adresse physique      Type
+    10.33.172.25          04-7c-16-ac-f9-ca     dynamique == MAC de mon binôme
+    10.33.172.27          ff-ff-ff-ff-ff-ff     statique
+    224.0.0.22            01-00-5e-00-00-16     statique
+    224.0.0.251           01-00-5e-00-00-fb     statique
+    224.0.0.252           01-00-5e-00-00-fc     statique
+    239.255.255.250       01-00-5e-7f-ff-fa     statique
 
   Il ne peut y avoir de gateway car seulement 2 adresses sont possibles dans un /30
