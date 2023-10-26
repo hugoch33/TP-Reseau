@@ -88,3 +88,54 @@
     tp3_arp.pcapng
 
 ## II. Routage
+
+
+🌞Ajouter les routes statiques nécessaires pour que john et marcel puissent se ping
+
+Pour john :
+
+    [hugo@localhost ~]$  sudo ip route add 10.3.2.0/24 via 10.3.1.254 dev enp0s3
+
+    [hugo@localhost ~]$ sudo nano /etc/sysconfig/network-scripts/route-enp0s3
+    [sudo] password for hugo:
+    [hugo@localhost ~]$ sudo systemctl restart NetworkManager
+
+Pour marcel :
+
+    [hugo@localhost ~]$ sudo nano /etc/sysconfig/network-scripts/route-enp0s3
+    [sudo] password for hugo:
+    [hugo@localhost ~]$ sudo systemctl restart NetworkManager
+
+
+ping de vérification :
+
+    De marcel à john :
+
+    [hugo@localhost ~]$ ping 10.3.1.11
+    PING 10.3.1.11 (10.3.1.11) 56(84) bytes of data.
+    64 bytes from 10.3.1.11: icmp_seq=1 ttl=63 time=1.35 ms
+    64 bytes from 10.3.1.11: icmp_seq=2 ttl=63 time=1.16 ms
+    64 bytes from 10.3.1.11: icmp_seq=3 ttl=63 time=1.25 ms
+
+    De john à marcel :
+    [hugo@localhost ~]$ ping 10.3.2.12
+    PING 10.3.2.12 (10.3.2.12) 56(84) bytes of data.
+    64 bytes from 10.3.2.12: icmp_seq=1 ttl=63 time=1.19 ms
+    64 bytes from 10.3.2.12: icmp_seq=2 ttl=63 time=1.16 ms
+    64 bytes from 10.3.2.12: icmp_seq=3 ttl=63 time=1.35 ms
+    64 bytes from 10.3.2.12: icmp_seq=4 ttl=63 time=1.27 ms
+    64 bytes from 10.3.2.12: icmp_seq=5 ttl=63 time=1.42 ms
+
+```
+
+    sudo ip neigh flush all
+
+    sur marcel : ping 10.3.1.11
+
+| ordre | type trame  | IP source | MAC source                | IP destination | MAC destination            |
+| ----- | ----------- | --------- | ------------------------- | -------------- | -------------------------- |
+| 1     | Requête ARP |           |`marcel` 08:00:27:b9:79:1d |                | Broadcast `FF:FF:FF:FF:FF` |
+| 2     | Réponse ARP | x         |`router` 0a:00:27:00:00:0d |                | `marcel` `AA:BB:CC:DD:EE`  |
+| ...   | ...         | ...       | ...                       |                |                            |
+| ?     | Ping        | ?         | ?                         | ?              | ?                          |
+| ?     | Pong        | ?         | ?                         | ?              | ?                          |
