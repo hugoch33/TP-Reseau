@@ -8,7 +8,9 @@
 
 - l'heure exacte à laquelle vous avez obtenu votre bail DHCP
 
-- l'heure exacte à laquelle il va expirer
+l'heure exacte à laquelle il va expirer
+
+```
 
     PS C:\Users\chama> ipconfig /all
 
@@ -34,3 +36,5 @@
 
 
 🌞 Capturer un échange DHCP
+
+
