@@ -46,3 +46,4 @@ parmi ces 4 trames, laquelle contient les informations proposées au client ?
 
 
 ## II. Serveur DHCP
+

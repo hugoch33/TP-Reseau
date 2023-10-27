@@ -161,6 +161,7 @@ PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
 success
 [hugo@localhost ~]$ sudo firewall-cmd --reload
 success
+
 ```
 
 🌞Donnez un accès internet à vos machines - config clients
@@ -171,6 +172,7 @@ success
 [hugo@localhost ~]$ sudo systemctl restart NetworkManager
 
 [hugo@localhost ~]$ sudo nano /etc/resolv.conf
+
 ```
 
 Vérification de l'accès à Internet (depuis marcel et john) :
@@ -184,6 +186,7 @@ PING google.com (142.250.75.238) 56(84) bytes of data.
 ^C
 --- google.com ping statistics ---
 3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+
 ```
 
 | ordre | type trame  | IP source           | MAC source                   | IP destination      | MAC destination              |
