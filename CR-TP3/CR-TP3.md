@@ -128,9 +128,9 @@ ping de vérification :
 
 
 ```
-    sudo ip neigh flush all
+🌞Analyse des échanges ARP
 
-    🌞Analyse des échanges ARP
+    sudo ip neigh flush all
 
 | ordre | type trame  | IP source           | MAC source                   | IP destination      | MAC destination              |
 | ----- | ----------- | ------------------- | ---------------------------- | ------------------- | ---------------------------- |
