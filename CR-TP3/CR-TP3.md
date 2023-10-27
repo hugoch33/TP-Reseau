@@ -168,7 +168,6 @@ ping de vérification :
 
 🌞Donnez un accès internet à vos machines - config clients
 
-```
 [hugo@localhost ~]$ sudo nano /etc/sysconfig/network
 
 [hugo@localhost ~]$ sudo systemctl restart NetworkManager
@@ -179,7 +178,6 @@ ping de vérification :
 
 Vérification de l'accès à Internet (depuis marcel et john) :
 
-```
     [hugo@localhost ~]$ ping google.com
     PING google.com (142.250.75.238) 56(84) bytes of data.
     64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=1 ttl=116 time=30.5 ms
