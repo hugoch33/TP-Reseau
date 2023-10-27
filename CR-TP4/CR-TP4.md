@@ -39,3 +39,10 @@ l'heure exacte à laquelle il va expirer
 
 
 🌞 Analyser la capture Wireshark
+
+parmi ces 4 trames, laquelle contient les informations proposées au client ?
+c'est la trame "offer" qui contient les informations proposés au client
+
+
+
+## II. Serveur DHCP
