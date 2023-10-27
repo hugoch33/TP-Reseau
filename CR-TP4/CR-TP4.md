@@ -33,7 +33,7 @@ l'heure exacte à laquelle il va expirer
    Serveurs DNS. . .  . . . . . . . . . . : 8.8.8.8
                                        1.1.1.1
    NetBIOS sur Tcpip. . . . . . . . . . . : Activé
-
+```
 
 🌞 Capturer un échange DHCP
 
@@ -43,6 +43,6 @@ l'heure exacte à laquelle il va expirer
 parmi ces 4 trames, laquelle contient les informations proposées au client ?
 c'est la trame "offer" qui contient les informations proposés au client
 
-
+```
 
 ## II. Serveur DHCP
