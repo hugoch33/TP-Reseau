@@ -126,10 +126,11 @@ ping de vérification :
     64 bytes from 10.3.2.12: icmp_seq=4 ttl=63 time=1.27 ms
     64 bytes from 10.3.2.12: icmp_seq=5 ttl=63 time=1.42 ms
 
+
 ```
     sudo ip neigh flush all
 
-🌞Analyse des échanges ARP
+    🌞Analyse des échanges ARP
 
 | ordre | type trame  | IP source           | MAC source                   | IP destination      | MAC destination              |
 | ----- | ----------- | ------------------- | ---------------------------- | ------------------- | ---------------------------- |
@@ -142,25 +143,26 @@ ping de vérification :
 | 6     | Pong        | `marcel` `10.3.2.12`| `marcel` `08:00:27:9e:58:94` | `john` `10.3.1.11`  | `routeur` `08:00:27:fb:fe:b0`|
 | 6     | Pong        | `marcel` `10.3.2.12`| `routeur` `08:00:27:e7:0e:1a`| `john` `10.3.1.11`  | `john` `08:00:27:42:4a:6f`   |
 
+ ```
+
 ### 3. Accès internet
 
 🌞Donnez un accès internet à vos machines - config routeur
 
 ```
-[hugo@localhost ~]$ ping 8.8.8.8
-PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
-64 bytes from 8.8.8.8: icmp_seq=1 ttl=114 time=21.6 ms
-64 bytes from 8.8.8.8: icmp_seq=2 ttl=114 time=19.1 ms
-^C
---- 8.8.8.8 ping statistics ---
-2 packets transmitted, 2 received, 0% packet loss, time 1003ms
-```
+    [hugo@localhost ~]$ ping 8.8.8.8
+    PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.
+    64 bytes from 8.8.8.8: icmp_seq=1 ttl=114 time=21.6 ms
+    64 bytes from 8.8.8.8: icmp_seq=2 ttl=114 time=19.1 ms
+    ^C
+    --- 8.8.8.8 ping statistics ---
+    2 packets transmitted, 2 received, 0% packet loss, time 1003ms
 
 ```
-[hugo@localhost ~]$ sudo firewall-cmd --add-masquerade --permanent
-success
-[hugo@localhost ~]$ sudo firewall-cmd --reload
-success
+    [hugo@localhost ~]$ sudo firewall-cmd --add-masquerade --permanent
+    success
+    [hugo@localhost ~]$ sudo firewall-cmd --reload
+    success
 
 ```
 
@@ -178,14 +180,14 @@ success
 Vérification de l'accès à Internet (depuis marcel et john) :
 
 ```
-[hugo@localhost ~]$ ping google.com
-PING google.com (142.250.75.238) 56(84) bytes of data.
-64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=1 ttl=116 time=30.5 ms
-64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=2 ttl=116 time=27.4 ms
-64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=3 ttl=116 time=28.1 ms
-^C
---- google.com ping statistics ---
-3 packets transmitted, 3 received, 0% packet loss, time 2004ms
+    [hugo@localhost ~]$ ping google.com
+    PING google.com (142.250.75.238) 56(84) bytes of data.
+    64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=1 ttl=116 time=30.5 ms
+    64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=2 ttl=116 time=27.4 ms
+    64 bytes from par10s41-in-f14.1e100.net (142.250.75.238): icmp_seq=3 ttl=116 time=28.1 ms
+    ^C
+    --- google.com ping statistics ---
+    3 packets transmitted, 3 received, 0% packet loss, time 2004ms
 
 ```
 
