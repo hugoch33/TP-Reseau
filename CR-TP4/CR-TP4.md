@@ -152,9 +152,10 @@ Ping node 1 à node 2
     64 bytes from 10.4.1.12: icmp_seq=2 ttl=64 time=1.27 ms
     64 bytes from 10.4.1.12: icmp_seq=3 ttl=64 time=1.52 ms
 
-`````
+```
 >sudo dhclient -r enp0s3  
 >sudo dhclient enp0s3
+```
 
 🌞 Bail DHCP serveur    
 
@@ -220,6 +221,7 @@ Route par défaut :
 
 
 Bail d'une durée de 6h :
+
 ```
 
     lease 10.4.1.138 {
