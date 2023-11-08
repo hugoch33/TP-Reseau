@@ -129,7 +129,7 @@ traceroute to google.com (172.217.18.206), 30 hops max, 60 byte packets
     link/ether 08:00:27:c8:fa:83 brd ff:ff:ff:ff:ff:ff
     inet 10.4.1.137/24 brd 10.4.1.255 scope global dynamic noprefixroute enp0s3
        valid_lft 408sec preferred_lft 408sec
-    inet6 fe80::a00:27ff:fec8:fa82/64 scope link
+    inet6 fe80::a00:27ff:fec8:fa8/64 scope link
        valid_lft forever preferred_lft forever
 ```
 
