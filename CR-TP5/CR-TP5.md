@@ -178,10 +178,9 @@ Installed:
     success
 
 ```
-
 🌞 Visitez le serveur web
 
-    [hugo@localhost ~]$ curl http://10.5.1.12
+     [hugo@localhost ~]$ curl http://10.5.1.12
     <h1>MEOW</h1>
 
 ```
