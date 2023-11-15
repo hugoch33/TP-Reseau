@@ -97,6 +97,8 @@ node1.tp5.b1 peut résoudre des noms de domaine publics (comme www.ynov.com)
     Rocky Linux 9 - Extras                          730  B/s |  11 kB     00:15
     Dependencies resolved.
 
+```
+
 🌞 Créer le site web
 
     [hugo@localhost var]$ sudo mkdir www
@@ -139,7 +141,7 @@ Installed:
     [hugo@localhost nginx]$ cd conf.d/
     [hugo@localhost conf.d]$ sudo nano site_web_nul.conf
 
-
+```
 
 🌞 Démarrer le serveur web !
 
@@ -166,6 +168,8 @@ Installed:
     lines 1-18/18 (END)
     [hugo@localhost conf.d]$
 
+```
+
 🌞 Ouvrir le port firewall
 
     [hugo@localhost ~]$ sudo firewall-cmd --add-port=80/tcp --permanent
@@ -173,13 +177,14 @@ Installed:
     [hugo@localhost ~]$ sudo firewall-cmd --reload
     success
 
+```
 
 🌞 Visitez le serveur web !
 
     [hugo@localhost ~]$ curl http://10.5.1.12
     <h1>MEOW</h1>
 
-
+```
 
 🌞 Visualiser le port en écoute
 
@@ -190,7 +195,7 @@ Installed:
     LISTEN   0        511                 [::]:80               [::]:*
     LISTEN   0        128                 [::]:22               [::]:*
 
-
+```
 
 🌞 Analyse trafic
 
