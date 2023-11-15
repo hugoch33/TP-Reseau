@@ -179,7 +179,7 @@ Installed:
 
 ```
 
-🌞 Visitez le serveur web !
+🌞 Visitez le serveur web
 
     [hugo@localhost ~]$ curl http://10.5.1.12
     <h1>MEOW</h1>
