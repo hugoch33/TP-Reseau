@@ -1,4 +1,4 @@
-# TP5 : 
+# TP5 : TCP, UDP et services réseau: 
 
 # I.First steps
 ## 1. SSH
@@ -117,8 +117,7 @@ Installed:
 
     Complete!
 
-🌞 Créer le site web
-
+```
     [hugo@localhost var]$ mkdir www
     mkdir: cannot create directory ‘www’: Permission denied
     [hugo@localhost var]$ sudo mkdir www
@@ -167,3 +166,45 @@ Installed:
     lines 1-18/18 (END)
     [hugo@localhost conf.d]$
 
+🌞 Ouvrir le port firewall
+
+    [hugo@localhost ~]$ sudo firewall-cmd --add-port=80/tcp --permanent
+    success
+    [hugo@localhost ~]$ sudo firewall-cmd --reload
+    success
+
+
+🌞 Visitez le serveur web !
+
+    [hugo@localhost ~]$ curl http://10.5.1.12
+    <h1>MEOW</h1>
+
+
+
+🌞 Visualiser le port en écoute
+
+    [hugo@localhost ~]$ ss -atnl
+    State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process
+    LISTEN   0        511              0.0.0.0:80            0.0.0.0:*
+    LISTEN   0        128              0.0.0.0:22            0.0.0.0:*
+    LISTEN   0        511                 [::]:80               [::]:*
+    LISTEN   0        128                 [::]:22               [::]:*
+
+
+
+🌞 Analyse trafic
+
+    [hugo@localhost ~]$ sudo tcpdump -i enp0s3 -w tp5_web.pcapng not port 22
+    [sudo] password for hugo:
+    dropped privs to tcpdump
+    tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
+    ^C13 packets captured
+    13 packets received by filter
+    0 packets dropped by kernel
+    [hugo@localhost ~]$ exit
+    logout
+    Connection to 10.5.1.12 closed.
+    chama@LAPTOP-J4TG9IM0 MINGW64 ~
+    $ scp hugo@10.5.1.12:/home/hugo/tp5_web.pcapng ./
+    hugo@10.5.1.12's password:
+    tp5_web.pcapng                                100% 2462   397.1KB/s   00:00
