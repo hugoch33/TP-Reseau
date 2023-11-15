@@ -69,7 +69,6 @@ node1.tp5.b1 a un accès internet
     64 bytes from par10s38-in-f14.1e100.net (172.217.18.206): icmp_seq=3 ttl=115 time=18.0 ms
     64 bytes from ham02s14-in-f206.1e100.net (172.217.18.206): icmp_seq=4 ttl=115 time=17.3 ms
     64 bytes from par10s38-in-f14.1e100.net (172.217.18.206): icmp_seq=5 ttl=115 time=17.6 ms
-
 ```
 
 node1.tp5.b1 peut résoudre des noms de domaine publics (comme www.ynov.com)
@@ -80,7 +79,6 @@ node1.tp5.b1 peut résoudre des noms de domaine publics (comme www.ynov.com)
     64 bytes from 172.67.74.226 (172.67.74.226): icmp_seq=1 ttl=55 time=20.0 ms
     64 bytes from 172.67.74.226 (172.67.74.226): icmp_seq=2 ttl=55 time=26.8 ms
     64 bytes from 172.67.74.226 (172.67.74.226): icmp_seq=3 ttl=55 time=20.9 ms
-
 ```
 
 ## 3. Serveur Web
@@ -96,7 +94,6 @@ node1.tp5.b1 peut résoudre des noms de domaine publics (comme www.ynov.com)
     Rocky Linux 9 - Extras                          290  B/s | 2.9 kB     00:10
     Rocky Linux 9 - Extras                          730  B/s |  11 kB     00:15
     Dependencies resolved.
-
 ```
 
 🌞 Créer le site web
@@ -119,7 +116,6 @@ Installed:
 
     Complete!
 
-```
     [hugo@localhost var]$ mkdir www
     mkdir: cannot create directory ‘www’: Permission denied
     [hugo@localhost var]$ sudo mkdir www
@@ -134,14 +130,12 @@ Installed:
 🌞 Donner les bonnes permissions
 
    [hugo@localhost var] $ sudo chown -R nginx:nginx /var/www/site_web_nul
-
 ```
 
 🌞 Créer un fichier de configuration NGINX pour notre site web
 
     [hugo@localhost nginx]$ cd conf.d/
     [hugo@localhost conf.d]$ sudo nano site_web_nul.conf
-
 ```
 
 🌞 Démarrer le serveur web !
@@ -168,7 +162,6 @@ Installed:
     Nov 10 12:07:00 localhost.localdomain systemd[1]: Started The nginx HTTP and reve>
     lines 1-18/18 (END)
     [hugo@localhost conf.d]$
-
 ```
 
 🌞 Ouvrir le port firewall
@@ -177,14 +170,12 @@ Installed:
     success
     [hugo@localhost ~]$ sudo firewall-cmd --reload
     success
-
 ```
 
 🌞 Visitez le serveur web
 
      [hugo@localhost ~]$ curl http://10.5.1.12
     <h1>MEOW</h1>
-
 ```
 
 🌞 Visualiser le port en écoute
@@ -195,7 +186,6 @@ Installed:
     LISTEN   0        128              0.0.0.0:22            0.0.0.0:*
     LISTEN   0        511                 [::]:80               [::]:*
     LISTEN   0        128                 [::]:22               [::]:*
-
 ```
 
 🌞 Analyse trafic
