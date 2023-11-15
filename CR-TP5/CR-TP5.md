@@ -97,7 +97,7 @@ node1.tp5.b1 peut résoudre des noms de domaine publics (comme www.ynov.com)
     Rocky Linux 9 - Extras                          730  B/s |  11 kB     00:15
     Dependencies resolved.
 
-`````````
+```
 
 🌞 Créer le site web
 
@@ -135,6 +135,7 @@ Installed:
 
    [hugo@localhost var] $ sudo chown -R nginx:nginx /var/www/site_web_nul
 
+```
 
 🌞 Créer un fichier de configuration NGINX pour notre site web
 
@@ -177,7 +178,7 @@ Installed:
     [hugo@localhost ~]$ sudo firewall-cmd --reload
     success
 
-`````````
+```
 
 🌞 Visitez le serveur web
 
