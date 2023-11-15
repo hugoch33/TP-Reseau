@@ -196,6 +196,8 @@ Installed:
     LISTEN   0        128                 [::]:22               [::]:*
 
 ```
+
+
 🌞 Analyse trafic
 
     [hugo@localhost ~]$ sudo tcpdump -i enp0s3 -w tp5_web.pcapng not port 22
