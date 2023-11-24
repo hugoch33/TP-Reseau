@@ -170,3 +170,6 @@ LISTEN  0       128               [::]:22               [::]:*
 [hugo@web conf.d]$
 
 🌞 Visitez le site web en https
+
+[hugo@john ~]$ curl -k https://10.7.1.12
+<h1>MEOW</h1>
