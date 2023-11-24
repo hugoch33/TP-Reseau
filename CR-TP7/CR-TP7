@@ -11,17 +11,16 @@
     The authenticity of host '10.7.1.11 (10.7.1.11)' can't be established.
     ED25519 key fingerprint is SHA256:4y2OKT6KDxupgGciZEb/N9K2klDDRbYC9eBevB1+v7Q.
     This host key is known by the following other names/addresses:
-        C:\Users\chama/.ssh/known_hosts:4: 10.3.1.11
-        C:\Users\chama/.ssh/known_hosts:7: 10.3.1.12
-        C:\Users\chama/.ssh/known_hosts:8: 10.3.2.12
-        C:\Users\chama/.ssh/known_hosts:9: 10.3.1.254
-        C:\Users\chama/.ssh/known_hosts:10: 10.5.1.11
-        C:\Users\chama/.ssh/known_hosts:11: 10.5.1.254
-        C:\Users\chama/.ssh/known_hosts:12: 10.5.1.12
-        C:\Users\chama/.ssh/known_hosts:13: 10.6.1.254
-        (4 additional names omitted)
+    C:\Users\chama/.ssh/known_hosts:4: 10.3.1.11
+    C:\Users\chama/.ssh/known_hosts:7: 10.3.1.12
+    C:\Users\chama/.ssh/known_hosts:8: 10.3.2.12
+    C:\Users\chama/.ssh/known_hosts:9: 10.3.1.254
+    C:\Users\chama/.ssh/known_hosts:10: 10.5.1.11
+    C:\Users\chama/.ssh/known_hosts:11: 10.5.1.254
+    C:\Users\chama/.ssh/known_hosts:12: 10.5.1.12
+    C:\Users\chama/.ssh/known_hosts:13: 10.6.1.254
+    (4 additional names omitted)
     Are you sure you want to continue connecting (yes/no/[fingerprint])?
-
     [hugo@john ~]$ sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key
     [sudo] password for hugo:
     256 SHA256:4y2OKT6KDxupgGciZEb/N9K2klDDRbYC9eBevB1+v7Q /etc/ssh/ssh_host_ed25519_key.pub (ED25519)
@@ -29,21 +28,145 @@
 
 🌞 Consulter l'état actuel
 
-[hugo@john ~]$ ss -atnl
-State         Recv-Q        Send-Q               Local Address:Port               Peer Address:Port       Process
-LISTEN        0             128                        0.0.0.0:22                      0.0.0.0:*
-LISTEN        0             128                           [::]:22                         [::]:*
+    [hugo@john ~]$ ss -atnl
+    State         Recv-Q        Send-Q               Local Address:Port               Peer Address:Port       Process
+    LISTEN        0             128                        0.0.0.0:22                      0.0.0.0:*
+    LISTEN        0             128                           [::]:22                         [::]:*
 
 🌞 Modifier la configuration du serveur SSH
 
-[hugo@router ~]$ sudo nano /etc/ssh/sshd_config
+    [hugo@router ~]$ sudo nano /etc/ssh/sshd_config
 
     Port 20000
     #AddressFamily any
     ListenAddress 10.7.1.254
     #ListenAddress ::
 
-[hugo@router ~]$ sudo systemctl restart sshd
-[hugo@router ~]$ ss -atnl
-State  Recv-Q Send-Q  Local Address:Port    Peer Address:Port Process
-LISTEN 0      128        10.7.1.254:20000        0.0.0.0:*
+    [hugo@router ~]$ sudo systemctl restart sshd
+    [hugo@router ~]$ ss -atnl
+    State  Recv-Q Send-Q  Local Address:Port    Peer Address:Port Process
+    LISTEN 0      128        10.7.1.254:20000        0.0.0.0:*
+
+🌞 Effectuer une connexion SSH sur le nouveau port
+-Sur la Vm:
+
+    sudo firewall-cmd --add-port=20000/tcp --permanent
+    sudo firewall-cmd --reload
+
+-Sur le terminal:
+    PS C:\Users\chama> ssh hugo@10.7.1.254 -p 20000
+    Last login: Fri Nov 24 09:20:58 2023
+    [hugo@router ~]$
+
+🌞 Supprimer les clés sur la machine router.tp7.b1
+
+    [hugo@router ~]$ cd /etc/ssh/
+    [hugo@router ssh]$ ls
+    moduli        sshd_config.d           ssh_host_ed25519_key.pub
+    ssh_config    ssh_host_ecdsa_key      ssh_host_rsa_key
+    ssh_config.d  ssh_host_ecdsa_key.pub  ssh_host_rsa_key.pub
+    sshd_config   ssh_host_ed25519_key
+    [hugo@router ssh]$ sudo rm ssh_host_*
+    [hugo@router ssh]$ ls
+    moduli  ssh_config  ssh_config.d  sshd_config  sshd_config.d
+
+🌞 Regénérez les clés sur la machine router.tp7.b1
+
+    [hugo@router ssh]$ sudo ssh-keygen -A
+    ssh-keygen: generating new host keys: RSA DSA ECDSA ED25519
+
+🌞 Tentez une nouvelle connexion au serveur
+
+    [hugo@router ssh]$ exit
+    logout
+    Connection to 10.7.1.254 closed.
+    PS C:\Users\chama> ssh hugo@10.7.1.254 -p 20000
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    @    WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!     @
+    @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+    IT IS POSSIBLE THAT SOMEONE IS DOING SOMETHING NASTY!
+    Someone could be eavesdropping on you right now (man-in-the-middle attack)!
+    It is also possible that a host key has just been changed.
+    The fingerprint for the ED25519 key sent by the remote host is
+    SHA256:kAolP4F8hk+Ger30OFKDlNvaia/TG3JmqTE40AjhojY.
+    Please contact your system administrator.
+    Add correct host key in C:\\Users\\chama/.ssh/known_hosts to get rid of this message.
+    Offending ECDSA key in C:\\Users\\chama/.ssh/known_hosts:22
+    Host key for [10.7.1.254]:20000 has changed and you have requested strict checking.
+    Host key verification failed.
+    [hugo@router ~]$
+```
+
+## III. Web sécurisé
+
+🌞 Montrer sur quel port est disponible le serveur web
+
+[hugo@web conf.d]$ ss -atnl
+State   Recv-Q  Send-Q   Local Address:Port     Peer Address:Port  Process
+LISTEN  0       511            0.0.0.0:80            0.0.0.0:*
+LISTEN  0       128            0.0.0.0:22            0.0.0.0:*
+LISTEN  0       511               [::]:80               [::]:*
+LISTEN  0       128               [::]:22               [::]:*
+
+
+🌞 Générer une clé et un certificat sur web.tp7.b1
+
+[hugo@web conf.d]$ sudo openssl req -new -newkey rsa:2048 -days 365 -nodes -
+    x509 -keyout server.key -out server.crt
+    ....+...+...+....+..+.........+.+......+.........+......+.....+..........+.....+.......+..+..........+........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*..+......+..+..........+........+.......+...+.....+.+.....+...+..........+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*.+......+............+..+.....................+....+..+.+.....+....+.....+.+...+..+...............+.......+......+.....+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    ...+........+.+.........+..+..........+.....+...+...+...+....+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*........+.....+.+...+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*...+.+..+..........+.....+.+.....+............+...................+......+..+......+......+...+......+....+..+......+.............+.........+..+...+...+...+.+...+........+....+...+............+......+.....+...+.+..............+......+......+..........+..............+................+..+......+....+...+........+.+.....+....+...........+......+.......+...............+.......................+....+...+.....+.+.....+.+...+...........+.+.........+..+.......+...............+...+..............+...+............+...+.......+......+........+..........+.....+..........+.........+.....+...+....+...+...+...+.....+..........+......+.....+....+.....+....+...+........+......+.+..+............+.+..+.+...........+...............+.+............+....................+.+......+...............+...+...+...+...........+.+.....+....+.....+.........+.+...+...+............+..+....+.........+........+....+......+..+............+.+..+.+......+.........+.....+.........+......+.+...+..+.+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+    -----
+    You are about to be asked to enter information that will be incorporated
+    into your certificate request.
+    What you are about to enter is what is called a Distinguished Name or a DN.
+    There are quite a few fields but you can leave some blank
+    For some fields there will be a default value,
+    If you enter '.', the field will be left blank.
+    -----
+    Country Name (2 letter code) [XX]:FR
+    State or Province Name (full name) []:AQ
+    Locality Name (eg, city) [Default City]:Bordeaux
+    Organization Name (eg, company) [Default Company Ltd]:hugo
+    Organizational Unit Name (eg, section) []:hugo
+    Common Name (eg, your name or your server's hostname) []:hugp
+    Email Address []:
+    [hugo@web conf.d]$ sudo mv server.key /etc/pki/tls/private/web.tp7.b1.key
+    [hugo@web conf.d]$ sudo mv server.crt /etc/pki/tls/certs/web.tp7.b1.crt
+    [hugo@web conf.d]$ sudo chown nginx:nginx /etc/pki/tls/private/web.tp7.b1.key
+    [hugo@web conf.d]$ sudo chown nginx:nginx /etc/pki/tls/certs/web.tp7.b1.crt
+    [hugo@web conf.d]$ sudo chmod 0400 /etc/pki/tls/private/web.tp7.b1.key
+    [hugo@web conf.d]$ sudo chmod 0444 /etc/pki/tls/certs/web.tp7.b1.cr
+
+🌞 Modification de la conf de NGINX
+[hugo@web conf.d]$ sudo cat /etc/nginx/conf.d/site_web_nul.conf
+    server {
+        # on change la ligne listen
+        listen 10.7.1.12:443 ssl;
+
+        # et on ajoute deux nouvelles lignes
+        ssl_certificate /etc/pki/tls/certs/web.tp7.b1.crt;
+        ssl_certificate_key /etc/pki/tls/private/web.tp7.b1.key;
+
+        server_name www.site_web_nul.b1;
+        root /var/www/site_web_nul;
+    }
+
+🌞 Conf firewall
+
+[hugo@web conf.d]$ sudo firewall-cmd --add-port=443/tcp --permanent
+success
+
+🌞 Redémarrez NGINX
+🌞 Prouvez que NGINX écoute sur le port 443/tcp
+
+[hugo@web conf.d]$ sudo systemctl restart nginx
+[hugo@web conf.d]$ ss -atnl
+State   Recv-Q  Send-Q   Local Address:Port     Peer Address:Port  Process
+LISTEN  0       511          10.7.1.12:443           0.0.0.0:*
+LISTEN  0       511            0.0.0.0:80            0.0.0.0:*
+LISTEN  0       128            0.0.0.0:22            0.0.0.0:*
+LISTEN  0       511               [::]:80               [::]:*
+LISTEN  0       128               [::]:22               [::]:*
+[hugo@web conf.d]$
+
+🌞 Visitez le site web en https
