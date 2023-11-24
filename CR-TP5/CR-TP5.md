@@ -180,18 +180,22 @@ Installed:
 
 🌞 Visualiser le port en écoute
 
-    [hugo@localhost ~]$ ss -atnl
-    State    Recv-Q   Send-Q     Local Address:Port     Peer Address:Port  Process
-    LISTEN   0        511              0.0.0.0:80            0.0.0.0:*
-    LISTEN   0        128              0.0.0.0:22            0.0.0.0:*
-    LISTEN   0        511                 [::]:80               [::]:*
-    LISTEN   0        128                 [::]:22               [::]:*
+
+[hugo@dns ~]$ ss -atnl
+    State      Recv-Q      Send-Q           Local Address:Port           Peer Address:Port     Process
+    LISTEN     0           4096                 127.0.0.1:953                 0.0.0.0:*
+    LISTEN     0           128                    0.0.0.0:22                  0.0.0.0:*
+    LISTEN     0           10                   127.0.0.1:53                  0.0.0.0:*
+    LISTEN     0           10                       [::1]:53                     [::]:*
+    LISTEN     0           128                       [::]:22                     [::]:*
+    LISTEN     0           4096                     [::1]:953                    [::]:*
+
 ```
 
 🌞 Analyse trafic
 
-    [hugo@localhost ~]$ sudo tcpdump -i enp0s3 -w tp5_web.pcapng not port 22
-    [sudo] password for hugo:
+[hugo@localhost ~]$ sudo tcpdump -i enp0s3 -w tp5_web.pcapng not port 22
+[sudo] password for hugo:
     dropped privs to tcpdump
     tcpdump: listening on enp0s3, link-type EN10MB (Ethernet), snapshot length 262144 bytes
     ^C13 packets captured
@@ -204,3 +208,4 @@ Installed:
     $ scp hugo@10.5.1.12:/home/hugo/tp5_web.pcapng ./
     hugo@10.5.1.12's password:
     tp5_web.pcapng                                100% 2462   397.1KB/s   00:00
+```

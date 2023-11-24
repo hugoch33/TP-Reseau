@@ -1,0 +1,49 @@
+# TP7 : Do u secure
+
+## I. Setup LAN
+
+
+## II. SSH
+
+🌞 Effectuez une connexion SSH en vérifiant le fingerprint
+
+    PS C:\Users\chama> ssh hugo@10.7.1.11
+    The authenticity of host '10.7.1.11 (10.7.1.11)' can't be established.
+    ED25519 key fingerprint is SHA256:4y2OKT6KDxupgGciZEb/N9K2klDDRbYC9eBevB1+v7Q.
+    This host key is known by the following other names/addresses:
+        C:\Users\chama/.ssh/known_hosts:4: 10.3.1.11
+        C:\Users\chama/.ssh/known_hosts:7: 10.3.1.12
+        C:\Users\chama/.ssh/known_hosts:8: 10.3.2.12
+        C:\Users\chama/.ssh/known_hosts:9: 10.3.1.254
+        C:\Users\chama/.ssh/known_hosts:10: 10.5.1.11
+        C:\Users\chama/.ssh/known_hosts:11: 10.5.1.254
+        C:\Users\chama/.ssh/known_hosts:12: 10.5.1.12
+        C:\Users\chama/.ssh/known_hosts:13: 10.6.1.254
+        (4 additional names omitted)
+    Are you sure you want to continue connecting (yes/no/[fingerprint])?
+
+    [hugo@john ~]$ sudo ssh-keygen -l -f /etc/ssh/ssh_host_ed25519_key
+    [sudo] password for hugo:
+    256 SHA256:4y2OKT6KDxupgGciZEb/N9K2klDDRbYC9eBevB1+v7Q /etc/ssh/ssh_host_ed25519_key.pub (ED25519)
+
+
+🌞 Consulter l'état actuel
+
+[hugo@john ~]$ ss -atnl
+State         Recv-Q        Send-Q               Local Address:Port               Peer Address:Port       Process
+LISTEN        0             128                        0.0.0.0:22                      0.0.0.0:*
+LISTEN        0             128                           [::]:22                         [::]:*
+
+🌞 Modifier la configuration du serveur SSH
+
+[hugo@router ~]$ sudo nano /etc/ssh/sshd_config
+
+    Port 20000
+    #AddressFamily any
+    ListenAddress 10.7.1.254
+    #ListenAddress ::
+
+[hugo@router ~]$ sudo systemctl restart sshd
+[hugo@router ~]$ ss -atnl
+State  Recv-Q Send-Q  Local Address:Port    Peer Address:Port Process
+LISTEN 0      128        10.7.1.254:20000        0.0.0.0:*
